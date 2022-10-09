@@ -1,197 +1,202 @@
+# Overview
+<p>
+    You can use this repository as an example to build your own project.
+    The Dockerfile contains all available extensions for PHP 8.1, including bundled extensions, external extensions and PECL extensions.
+</p>
+<p>
+    Used the official <a href="https://hub.docker.com/_/php">php:8.1-fpm</a> docker image.
+</p>
+
+
+### Legend
+:one: - These are not actual extensions. They are part of the PHP core and cannot be left out of a PHP binary with compilation options. <br/>
+:two: - These extensions are bundled with PHP. You can enable or disable these extensions. <br/>
+:three: - These extensions are bundled with PHP but in order to enable them, external libraries will be needed. <br/> 
+:four: - These extensions are available from <a href="https://pecl.php.net/">PECL</a>. They may require external libraries.
+
+### PHP Extensions
 <p>
     Please <a href="https://www.php.net/manual/en/extensions.alphabetical.php" target="_blank">visit</a> 
     the official PHP website to see all the available extensions.
 </p>
 
-<p>
-    Used the official <a href="https://hub.docker.com/_/php">php:8.1-fpm</a> docker image.
-</p>
-
-<h3 style="text-align: center;">Legend</h3>
-:one: - These are not actual extensions. They are part of the PHP core and cannot be left out of a PHP binary with compilation options.
-:two: - These extensions are bundled with PHP. You can enable or disable these extensions.
-:three: - These extensions are bundled with PHP but in order to enable them, external libraries will be needed. 
-:four: - These extensions are available from <a href="https://pecl.php.net/">PECL</a>. They may require external libraries.
-
-<h1 style="text-align: center;">PHP Extensions</h1>
-
-| Name                                                                  | Installed          | Available          | Notes |
-|-----------------------------------------------------------------------|--------------------|--------------------|-------|
-| Apache                                                                | :x:                | :x:                | -     |
-| APCu                                                                  | :x:                | :x:                | -     |
-| [Arrays](https://www.php.net/manual/en/book.array.php)                | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| BC Math                                                               | :x:                | :x:                | -     |
-| Bzip2                                                                 | :x:                | :x:                | -     |
-| Calendar                                                              | :x:                | :x:                | -     |
-| [Classes/Objects](https://www.php.net/manual/en/book.classobj.php)    | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| CommonMark                                                            | :x:                | :x:                | -     |
-| COM                                                                   | :x:                | :x:                | -     |
-| Componere                                                             | :x:                | :x:                | -     |
-| [CSPRNG](https://www.php.net/manual/en/book.csprng.php)               | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| Ctype                                                                 | :x:                | :x:                | -     |
-| CUBRID                                                                | :x:                | :x:                | -     |
-| cURL                                                                  | :x:                | :x:                | -     |
-| [Date/Time](https://www.php.net/manual/en/book.datetime.php)          | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| DBA                                                                   | :x:                | :x:                | -     |
-| dBase                                                                 | :x:                | :x:                | -     |
-| Direct IO                                                             | :x:                | :x:                | -     |
-| [Directories](https://www.php.net/manual/en/book.dir.php)             | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| DOM                                                                   | :x:                | :x:                | -     |
-| Data Structures                                                       | :x:                | :x:                | -     |
-| Eio                                                                   | :x:                | :x:                | -     |
-| Enchant                                                               | :x:                | :x:                | -     |
-| [Error Handling](https://www.php.net/manual/en/book.errorfunc.php)    | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| Ev                                                                    | :x:                | :x:                | -     |
-| Event                                                                 | :x:                | :x:                | -     |
-| [Program execution](https://www.php.net/manual/en/book.exec.php)      | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| Exif                                                                  | :x:                | :x:                | -     |
-| Expect                                                                | :x:                | :x:                | -     |
-| FANN                                                                  | :x:                | :x:                | -     |
-| FDF                                                                   | :x:                | :x:                | -     |
-| FFI                                                                   | :x:                | :x:                | -     |
-| Fileinfo                                                              | :x:                | :x:                | -     |
-| [Filesystem](https://www.php.net/manual/en/book.filesystem.php)       | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| Filter                                                                | :x:                | :x:                | -     |
-| [FastCGI Process Manager](https://www.php.net/manual/en/book.fpm.php) | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| FTP                                                                   | :x:                | :x:                | -     |
-| [Function Handling](https://www.php.net/manual/en/book.funchand.php)  | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| Gearman                                                               | :x:                | :x:                | -     |
-| Gender                                                                | :x:                | :x:                | -     |
-| GeoIP                                                                 | :x:                | :x:                | -     |
-| Gettext                                                               | :x:                | :x:                | -     |
-| Gmagick                                                               | :x:                | :x:                | -     |
-| GMP                                                                   | :x:                | :x:                | -     |
-| GnuPG                                                                 | :x:                | :x:                | -     |
-| [Hash](https://www.php.net/manual/en/book.hash.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| HRTime                                                                | :x:                | :x:                | -     |
-| Firebird/InterBase                                                    | :x:                | :x:                | -     |
-| IBM DB2                                                               | :x:                | :x:                | -     |
-| iconv                                                                 | :x:                | :x:                | -     |
-| Igbinary                                                              | :x:                | :x:                | -     |
-| GD                                                                    | :x:                | :x:                | -     |
-| ImageMagick                                                           | :x:                | :x:                | -     |
-| IMAP                                                                  | :x:                | :x:                | -     |
-| [PHP Options/Info](https://www.php.net/manual/en/book.info.php)       | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| Inotify                                                               | :x:                | :x:                | -     |
-| intl                                                                  | :x:                | :x:                | -     |
-| [JSON](https://www.php.net/manual/en/book.json.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| LDAP                                                                  | :x:                | :x:                | -     |
-| libxml                                                                | :x:                | :x:                | -     |
-| Lua                                                                   | :x:                | :x:                | -     |
-| LuaSandbox                                                            | :x:                | :x:                | -     |
-| LZF                                                                   | :x:                | :x:                | -     |
-| [Mail](https://www.php.net/manual/en/book.mail.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| Mailparse                                                             | :x:                | :x:                | -     |
-| [Math](https://www.php.net/manual/en/book.math.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| Multibyte String                                                      | :x:                | :x:                | -     |
-| Mcrypt                                                                | :x:                | :x:                | -     |
-| Memcache                                                              | :x:                | :x:                | -     |
-| Memcached                                                             | :x:                | :x:                | -     |
-| Mhash                                                                 | :x:                | :x:                | -     |
-| [Misc.](https://www.php.net/manual/en/book.misc.php)                  | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| mqseries                                                              | :x:                | :x:                | -     |
-| MySQL (Original)                                                      | :x:                | :x:                | -     |
-| Mysql_xdevapi                                                         | :x:                | :x:                | -     |
-| MySQLi                                                                | :x:                | :x:                | -     |
-| Mysqlnd                                                               | :x:                | :x:                | -     |
-| [Network](https://www.php.net/manual/en/book.network.php)             | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| OAuth                                                                 | :x:                | :x:                | -     |
-| OCI8                                                                  | :x:                | :x:                | -     |
-| [OPcache](https://www.php.net/manual/en/book.opcache.php)             | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| OpenAL                                                                | :x:                | :x:                | -     |
-| OpenSSL                                                               | :x:                | :x:                | -     |
-| [Output Control](https://www.php.net/manual/en/book.outcontrol.php)   | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| parallel                                                              | :x:                | :x:                | -     |
-| Parle                                                                 | :x:                | :x:                | -     |
-| [Password Hashing](https://www.php.net/manual/en/book.password.php)   | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| PCNTL                                                                 | :x:                | :x:                | -     |
-| [PCRE](https://www.php.net/manual/en/book.pcre.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| PDO                                                                   | :x:                | :x:                | -     |
-| CUBRID (PDO)                                                          | :x:                | :x:                | -     |
-| MS SQL Server (PDO)                                                   | :x:                | :x:                | -     |
-| Firebird (PDO)                                                        | :x:                | :x:                | -     |
-| IBM (PDO)                                                             | :x:                | :x:                | -     |
-| MySQL (PDO)                                                           | :x:                | :x:                | -     |
-| Oracle (PDO)                                                          | :x:                | :x:                | -     |
-| ODBC and DB2 (PDO)                                                    | :x:                | :x:                | -     |
-| PostgreSQL (PDO)                                                      | :x:                | :x:                | -     |
-| SQLite (PDO)                                                          | :x:                | :x:                | -     |
-| MS SQL Server (PDO)                                                   | :x:                | :x:                | -     |
-| PostgreSQL                                                            | :x:                | :x:                | -     |
-| Phar                                                                  | :x:                | :x:                | -     |
-| phpdbg                                                                | :x:                | :x:                | -     |
-| POSIX                                                                 | :x:                | :x:                | -     |
-| PS                                                                    | :x:                | :x:                | -     |
-| Pspell                                                                | :x:                | :x:                | -     |
-| pthreads                                                              | :x:                | :x:                | -     |
-| Quickhash                                                             | :x:                | :x:                | -     |
-| Radius                                                                | :x:                | :x:                | -     |
-| Rar                                                                   | :x:                | :x:                | -     |
-| Readline                                                              | :x:                | :x:                | -     |
-| Recode                                                                | :x:                | :x:                | -     |
-| [Reflection](https://www.php.net/manual/en/book.reflection.php)       | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| RpmInfo                                                               | :x:                | :x:                | -     |
-| RRD                                                                   | :x:                | :x:                | -     |
-| runkit7                                                               | :x:                | :x:                | -     |
-| ScoutAPM                                                              | :x:                | :x:                | -     |
-| Seaslog                                                               | :x:                | :x:                | -     |
-| Semaphore                                                             | :x:                | :x:                | -     |
-| Sessions                                                              | :x:                | :x:                | -     |
-| Shared Memory                                                         | :x:                | :x:                | -     |
-| SimpleXML                                                             | :x:                | :x:                | -     |
-| SNMP                                                                  | :x:                | :x:                | -     |
-| SOAP                                                                  | :x:                | :x:                | -     |
-| Sockets                                                               | :x:                | :x:                | -     |
-| Sodium                                                                | :x:                | :x:                | -     |
-| Solr                                                                  | :x:                | :x:                | -     |
-| [SPL](https://www.php.net/manual/en/book.spl.php)                     | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| SQLite3                                                               | :x:                | :x:                | -     |
-| SQLSRV                                                                | :x:                | :x:                | -     |
-| ssdeep                                                                | :x:                | :x:                | -     |
-| SSH2                                                                  | :x:                | :x:                | -     |
-| Statistics                                                            | :x:                | :x:                | -     |
-| Stomp                                                                 | :x:                | :x:                | -     |
-| [Streams](https://www.php.net/manual/en/book.stream.php)              | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| [Strings](https://www.php.net/manual/en/book.strings.php)             | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| SVM                                                                   | :x:                | :x:                | -     |
-| SVN                                                                   | :x:                | :x:                | -     |
-| Swoole                                                                | :x:                | :x:                | -     |
-| Sync                                                                  | :x:                | :x:                | -     |
-| Taint                                                                 | :x:                | :x:                | -     |
-| TCP                                                                   | :x:                | :x:                | -     |
-| Tidy                                                                  | :x:                | :x:                | -     |
-| Tokenizer                                                             | :x:                | :x:                | -     |
-| Trader                                                                | :x:                | :x:                | -     |
-| UI                                                                    | :x:                | :x:                | -     |
-| ODBC                                                                  | :x:                | :x:                | -     |
-| uopz                                                                  | :x:                | :x:                | -     |
-| [URLs](https://www.php.net/manual/en/book.url.php)                    | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| V8js                                                                  | :x:                | :x:                | -     |
-| [Variable handling](https://www.php.net/manual/en/book.var.php)       | :heavy_check_mark: | :heavy_check_mark: | :one: |
-| var_representation                                                    | :x:                | :x:                | -     |
-| Varnish                                                               | :x:                | :x:                | -     |
-| WDDX                                                                  | :x:                | :x:                | -     |
-| win32service                                                          | :x:                | :x:                | -     |
-| WinCache                                                              | :x:                | :x:                | -     |
-| wkhtmltox                                                             | :x:                | :x:                | -     |
-| xattr                                                                 | :x:                | :x:                | -     |
-| xdiff                                                                 | :x:                | :x:                | -     |
-| Xhprof                                                                | :x:                | :x:                | -     |
-| XLSWriter                                                             | :x:                | :x:                | -     |
-| XML Parser                                                            | :x:                | :x:                | -     |
-| XMLDiff                                                               | :x:                | :x:                | -     |
-| XMLReader                                                             | :x:                | :x:                | -     |
-| XML-RPC                                                               | :x:                | :x:                | -     |
-| XMLWriter                                                             | :x:                | :x:                | -     |
-| XSL                                                                   | :x:                | :x:                | -     |
-| Yac                                                                   | :x:                | :x:                | -     |
-| Yaconf                                                                | :x:                | :x:                | -     |
-| Yaf                                                                   | :x:                | :x:                | -     |
-| Yaml                                                                  | :x:                | :x:                | -     |
-| Yar                                                                   | :x:                | :x:                | -     |
-| YAZ                                                                   | :x:                | :x:                | -     |
-| Zip                                                                   | :x:                | :x:                | -     |
-| Zlib                                                                  | :x:                | :x:                | -     |
-| 0MQ messaging                                                         | :x:                | :x:                | -     |
-| ZooKeeper                                                             | :x:                | :x:                | -     |
+| Name                                                                  | Installed          | Available          | Notes                                                                                                               |
+|-----------------------------------------------------------------------|--------------------|--------------------|---------------------------------------------------------------------------------------------------------------------|
+| [Apache](https://www.php.net/manual/en/book.apache.php)               | :x:                | :x:                | :one:<br/>It depends on how you installed php. Almost all apache functions won't work on php-fpm.                   |
+| [APCu](https://www.php.net/manual/en/book.apcu.php)                   | :x:                | :heavy_check_mark: | :four:<br/>[APCu-5.1.22](https://pecl.php.net/package/apcu)                                                         |
+| [Arrays](https://www.php.net/manual/en/book.array.php)                | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [BC Math](https://www.php.net/manual/en/book.bc.php)                  | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [Bzip2](https://www.php.net/manual/en/book.bzip2.php)                 | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [Calendar](https://www.php.net/manual/en/book.calendar.php)           | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [Classes/Objects](https://www.php.net/manual/en/book.classobj.php)    | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [CommonMark](https://www.php.net/manual/en/book.cmark.php)            | :x:                | :heavy_check_mark: | :four:<br/>[cmark-1.2.0](https://pecl.php.net/package/cmark)<br/>It installs but doesn't work.                      |
+| [COM](https://www.php.net/manual/en/book.com.php)                     | :x:                | :x:                | :two:<br/>Only available for the Windows version of PHP.                                                            |
+| [Componere](https://www.php.net/manual/en/book.componere.php)         | :x:                | :x:                | :four:<br/>[componere-3.1.2](https://pecl.php.net/package/componere)<br/>Doesn't work with PHP 8.1.                 |
+| [CSPRNG](https://www.php.net/manual/en/book.csprng.php)               | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [Ctype](https://www.php.net/manual/en/book.ctype.php)                 | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [CUBRID](https://www.php.net/manual/en/book.cubrid.php)               | :x:                | :x:                | :four:<br/>[CUBRID](https://pecl.php.net/package/cubrid)<br/>Doesn't work with PHP 8.1.                             |
+| [cURL](https://www.php.net/manual/en/book.curl.php)                   | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Date/Time](https://www.php.net/manual/en/book.datetime.php)          | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [DBA](https://www.php.net/manual/en/book.dba.php)                     | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [dBase](https://www.php.net/manual/en/book.dbase.php)                 | :x:                | :heavy_check_mark: | :four:<br/>[dbase-7.1.1](https://pecl.php.net/package/dbase)                                                        |
+| [Direct IO](https://www.php.net/manual/en/book.dio.php)               | :x:                | :heavy_check_mark: | :four:<br/>[dio-0.2.1](https://pecl.php.net/package/dio)                                                            |
+| [Directories](https://www.php.net/manual/en/book.dir.php)             | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [DOM](https://www.php.net/manual/en/book.dom.php)                     | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Data Structures](https://www.php.net/manual/en/book.ds.php)          | :x:                | :heavy_check_mark: | :four:<br/>[ds-1.4.0](https://pecl.php.net/package/ds)                                                              |
+| [Eio](https://www.php.net/manual/en/book.eio.php)                     | :x:                | :heavy_check_mark: | :four:<br/>[eio-3.0.0RC4](https://pecl.php.net/package/eio)                                                         |
+| [Enchant](https://www.php.net/manual/en/book.enchant.php)             | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [Error Handling](https://www.php.net/manual/en/book.errorfunc.php)    | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [Ev](https://www.php.net/manual/en/book.ev.php)                       | :x:                | :heavy_check_mark: | :four:<br/>[ev-1.1.5](https://pecl.php.net/package/ev)                                                              |
+| [Event](https://www.php.net/manual/en/book.event.php)                 | :x:                | :x:                | :four:<br/>[event-3.0.8](https://pecl.php.net/package/event)<br/>Doesn't work with PHP 8.1.                         |
+| [Program execution](https://www.php.net/manual/en/book.exec.php)      | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [Exif](https://www.php.net/manual/en/book.exif.php)                   | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [Expect](https://www.php.net/manual/en/book.expect.php)               | :x:                | :x:                | :four:<br/>[expect](https://pecl.php.net/package/expect)<br/>Doesn't work with PHP 8.1.                             |
+| [FANN](https://www.php.net/manual/en/book.fann.php)                   | :x:                | :heavy_check_mark: | :four:<br/>[fann-1.2.0RC2](https://pecl.php.net/package/fann)                                                       |
+| [FDF](https://www.php.net/manual/en/book.fdf.php)                     | :x:                | :x:                | :four:<br/>Doesn't work with PHP 8.1. It looks like this extension is dead.                                         |
+| [FFI](https://www.php.net/manual/en/book.ffi.php)                     | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [Fileinfo](https://www.php.net/manual/en/book.fileinfo.php)           | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Filesystem](https://www.php.net/manual/en/book.filesystem.php)       | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [Filter](https://www.php.net/manual/en/book.filter.php)               | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [FastCGI Process Manager](https://www.php.net/manual/en/book.fpm.php) | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [FTP](https://www.php.net/manual/en/book.ftp.php)                     | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Function Handling](https://www.php.net/manual/en/book.funchand.php)  | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [Gearman](https://www.php.net/manual/en/book.gearman.php)             | :x:                | :heavy_check_mark: | :four:<br/>[gearman-2.1.0](https://pecl.php.net/package/gearman)                                                    |
+| [Gender](https://www.php.net/manual/en/book.gender.php)               | :x:                | :x:                | :four:<br/>Doesn't work with PHP 8.1.                                                                               |
+| [GeoIP](https://www.php.net/manual/en/book.geoip.php)                 | :x:                | :x:                | :four:<br/>Doesn't work with PHP 8.1.                                                                               |
+| [Gettext](https://www.php.net/manual/en/book.gettext.php)             | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [Gmagick](https://www.php.net/manual/en/book.gmagick.php)             | :x:                | :heavy_check_mark: | :four:<br/>[gmagick-2.0.6RC1](https://pecl.php.net/package/gmagick)                                                 |
+| [GMP](https://www.php.net/manual/en/book.gmp.php)                     | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [GnuPG](https://www.php.net/manual/en/book.gnupg.php)                 | :x:                | :heavy_check_mark: | :four:<br/>[gnupg-1.5.1](https://pecl.php.net/package/gnupg)                                                        |
+| [Hash](https://www.php.net/manual/en/book.hash.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [HRTime](https://www.php.net/manual/en/hrtime.installation.php)       | :x:                | :x:                | :four:<br/>Doesn't work with PHP 8.1.                                                                               |
+| Firebird/InterBase                                                    | :x:                | :x:                | -                                                                                                                   |
+| IBM DB2                                                               | :x:                | :x:                | -                                                                                                                   |
+| [iconv](https://www.php.net/manual/en/book.iconv.php)                 | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Igbinary](https://www.php.net/manual/en/book.igbinary.php)           | :x:                | :heavy_check_mark: | :four:[igbinary-3.2.7](https://pecl.php.net/package/igbinary)                                                       |
+| [GD](https://www.php.net/manual/en/book.image.php)                    | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| ImageMagick                                                           | :x:                | :x:                | -                                                                                                                   |
+| [IMAP](https://www.php.net/manual/en/book.imap.php)                   | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [PHP Options/Info](https://www.php.net/manual/en/book.info.php)       | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [Inotify](https://www.php.net/manual/en/book.inotify.php)             | :x:                | :heavy_check_mark: | :four:<br/>[inotify-3.0.0](https://pecl.php.net/package/inotify)                                                    |
+| [intl](https://www.php.net/manual/en/book.intl.php)                   | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [JSON](https://www.php.net/manual/en/book.json.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [LDAP](https://www.php.net/manual/en/book.ldap.php)                   | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [libxml](https://www.php.net/manual/en/book.libxml.php)               | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| Lua                                                                   | :x:                | :x:                | -                                                                                                                   |
+| LuaSandbox                                                            | :x:                | :x:                | -                                                                                                                   |
+| LZF                                                                   | :x:                | :x:                | -                                                                                                                   |
+| [Mail](https://www.php.net/manual/en/book.mail.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| Mailparse                                                             | :x:                | :x:                | -                                                                                                                   |
+| [Math](https://www.php.net/manual/en/book.math.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [Multibyte String](https://www.php.net/manual/en/book.mbstring.php)   | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| Mcrypt                                                                | :x:                | :x:                | -                                                                                                                   |
+| Memcache                                                              | :x:                | :x:                | -                                                                                                                   |
+| Memcached                                                             | :x:                | :x:                | -                                                                                                                   |
+| [Mhash](https://www.php.net/manual/en/book.mhash.php)                 | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Misc.](https://www.php.net/manual/en/book.misc.php)                  | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| mqseries                                                              | :x:                | :x:                | -                                                                                                                   |
+| MySQL (Original)                                                      | :x:                | :x:                | -                                                                                                                   |
+| Mysql_xdevapi                                                         | :x:                | :x:                | -                                                                                                                   |
+| [MySQLi](https://www.php.net/manual/en/book.mysqli.php)               | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [Mysqlnd](https://www.php.net/manual/en/book.mysqlnd.php)             | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Network](https://www.php.net/manual/en/book.network.php)             | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| OAuth                                                                 | :x:                | :x:                | -                                                                                                                   |
+| [OCI8](https://www.php.net/manual/en/book.oci8.php)                   | :x:                | :x:                | -                                                                                                                   |
+| [OPcache](https://www.php.net/manual/en/book.opcache.php)             | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| OpenAL                                                                | :x:                | :x:                | -                                                                                                                   |
+| [OpenSSL](https://www.php.net/manual/en/book.openssl.php)             | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Output Control](https://www.php.net/manual/en/book.outcontrol.php)   | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| parallel                                                              | :x:                | :x:                | -                                                                                                                   |
+| [Parle](https://www.php.net/manual/en/book.parle.php)                 | :x:                | :heavy_check_mark: | :four:<br/>[parle-0.8.3](https://pecl.php.net/package/parle)                                                        |
+| [Password Hashing](https://www.php.net/manual/en/book.password.php)   | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [PCNTL](https://www.php.net/manual/en/book.pcntl.php)                 | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [PCRE](https://www.php.net/manual/en/book.pcre.php)                   | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [PDO](https://www.php.net/manual/en/book.pdo.php)                     | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| CUBRID (PDO)                                                          | :x:                | :x:                | -                                                                                                                   |
+| MS SQL Server (PDO)                                                   | :x:                | :x:                | -                                                                                                                   |
+| Firebird (PDO)                                                        | :x:                | :x:                | -                                                                                                                   |
+| IBM (PDO)                                                             | :x:                | :x:                | -                                                                                                                   |
+| MySQL (PDO)                                                           | :x:                | :x:                | -                                                                                                                   |
+| Oracle (PDO)                                                          | :x:                | :x:                | -                                                                                                                   |
+| ODBC and DB2 (PDO)                                                    | :x:                | :x:                | -                                                                                                                   |
+| PostgreSQL (PDO)                                                      | :x:                | :x:                | -                                                                                                                   |
+| SQLite (PDO)                                                          | :x:                | :x:                | -                                                                                                                   |
+| MS SQL Server (PDO)                                                   | :x:                | :x:                | -                                                                                                                   |
+| [PostgreSQL](https://www.php.net/manual/en/book.pgsql.php)            | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [Phar](https://www.php.net/manual/en/book.phar.php)                   | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| phpdbg                                                                | :x:                | :x:                | -                                                                                                                   |
+| [POSIX](https://www.php.net/manual/en/book.posix.php)                 | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| PS                                                                    | :x:                | :x:                | -                                                                                                                   |
+| [Pspell](https://www.php.net/manual/en/book.pspell.php)               | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| pthreads                                                              | :x:                | :x:                | -                                                                                                                   |
+| Quickhash                                                             | :x:                | :x:                | -                                                                                                                   |
+| Radius                                                                | :x:                | :x:                | -                                                                                                                   |
+| Rar                                                                   | :x:                | :x:                | -                                                                                                                   |
+| [Readline](https://www.php.net/manual/en/book.readline.php)           | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| Recode                                                                | :x:                | :x:                | -                                                                                                                   |
+| [Reflection](https://www.php.net/manual/en/book.reflection.php)       | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| RpmInfo                                                               | :x:                | :x:                | -                                                                                                                   |
+| RRD                                                                   | :x:                | :x:                | -                                                                                                                   |
+| runkit7                                                               | :x:                | :x:                | -                                                                                                                   |
+| ScoutAPM                                                              | :x:                | :x:                | -                                                                                                                   |
+| Seaslog                                                               | :x:                | :x:                | -                                                                                                                   |
+| [Semaphore](https://www.php.net/manual/en/book.sem.php)               | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [Sessions](https://www.php.net/manual/en/book.session.php)            | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [Shared Memory](https://www.php.net/manual/en/book.shmop.php)         | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [SimpleXML](https://www.php.net/manual/en/book.simplexml.php)         | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [SNMP](https://www.php.net/manual/en/book.snmp.php)                   | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [SOAP](https://www.php.net/manual/en/book.soap.php)                   | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [Sockets](https://www.php.net/manual/en/book.sockets.php)             | :x:                | :heavy_check_mark: | :two:                                                                                                               |
+| [Sodium](https://www.php.net/manual/en/book.sodium.php)               | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| Solr                                                                  | :x:                | :x:                | -                                                                                                                   |
+| [SPL](https://www.php.net/manual/en/book.spl.php)                     | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [SQLite3](https://www.php.net/manual/en/book.sqlite3.php)             | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| SQLSRV                                                                | :x:                | :x:                | -                                                                                                                   |
+| ssdeep                                                                | :x:                | :x:                | -                                                                                                                   |
+| SSH2                                                                  | :x:                | :x:                | -                                                                                                                   |
+| [Statistics](https://www.php.net/manual/en/book.stats.php)            | :x:                | :x:                | :four:<br/>[stats](https://pecl.php.net/package/stats)<br/> Doesn't work with PHP 8.1.                              |
+| [Stomp](https://www.php.net/manual/en/book.stomp.php)                 | :x:                | :heavy_check_mark: | :four:<br/>[stomp-2.0.3](https://pecl.php.net/package/stomp)                                                        |
+| [Streams](https://www.php.net/manual/en/book.stream.php)              | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [Strings](https://www.php.net/manual/en/book.strings.php)             | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [SVM](https://www.php.net/manual/en/book.svm.php)                     | :x:                | :heavy_check_mark: | :four:<br/>[svm-0.2.3](https://pecl.php.net/package/svm)                                                            |
+| [SVN](https://www.php.net/manual/en/book.svn.php)                     | :x:                | :x:                | :four:<br/>[svn](https://pecl.php.net/package/svn)<br/>Doesn't work with PHP 8.1.                                   |
+| [Swoole](https://www.php.net/manual/en/book.swoole.php)               | :x:                | :heavy_check_mark: | :four:<br/>[swoole-4.8.12](https://pecl.php.net/package/swoole)                                                     |
+| [Sync](https://www.php.net/manual/en/book.sync.php)                   | :x:                | :heavy_check_mark: | :four:<br/>[sync-1.1.2](https://pecl.php.net/package/sync)                                                          |
+| Taint                                                                 | :x:                | :x:                | -                                                                                                                   |
+| TCP                                                                   | :x:                | :x:                | -                                                                                                                   |
+| [Tidy](https://www.php.net/manual/en/book.tidy.php)                   | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [Tokenizer](https://www.php.net/manual/en/book.tokenizer.php)         | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| Trader                                                                | :x:                | :x:                | -                                                                                                                   |
+| [UI](https://www.php.net/manual/en/book.ui.php)                       | :x:                | :x:                | -                                                                                                                   |
+| [ODBC](https://www.php.net/manual/en/book.uodbc.php)                  | :x:                | :x:                | -                                                                                                                   |
+| uopz                                                                  | :x:                | :x:                | -                                                                                                                   |
+| [URLs](https://www.php.net/manual/en/book.url.php)                    | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| [V8js](https://www.php.net/manual/en/book.v8js.php)                   | :x:                | :x:                | -                                                                                                                   |
+| [Variable handling](https://www.php.net/manual/en/book.var.php)       | :heavy_check_mark: | :heavy_check_mark: | :one:                                                                                                               |
+| var_representation                                                    | :x:                | :x:                | -                                                                                                                   |
+| Varnish                                                               | :x:                | :x:                | -                                                                                                                   |
+| WDDX                                                                  | :x:                | :x:                | -                                                                                                                   |
+| win32service                                                          | :x:                | :x:                | -                                                                                                                   |
+| WinCache                                                              | :x:                | :x:                | -                                                                                                                   |
+| wkhtmltox                                                             | :x:                | :x:                | -                                                                                                                   |
+| xattr                                                                 | :x:                | :x:                | -                                                                                                                   |
+| xdiff                                                                 | :x:                | :x:                | -                                                                                                                   |
+| Xhprof                                                                | :x:                | :x:                | -                                                                                                                   |
+| [XLSWriter](https://www.php.net/manual/en/book.xlswriter.php)         | :x:                | :heavy_check_mark: | :four:<br/>[xlswriter-1.5.2](https://pecl.php.net/package/xlswriter)                                                |
+| [XML Parser](https://www.php.net/manual/en/book.xml.php)              | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [XMLDiff](https://www.php.net/manual/en/book.xmldiff.php)             | :x:                | :heavy_check_mark: | :four:<br/>[xmldiff-1.1.3](https://pecl.php.net/package/xmldiff)                                                    |
+| [XMLReader](https://www.php.net/manual/en/book.xmlreader.php)         | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [XML-RPC](https://www.php.net/manual/en/book.xmlrpc.php)              | :x:                | :heavy_check_mark: | :four:<br/>[xmlrpc-1.0.0RC3](https://pecl.php.net/package/xmlrpc)<br/>This package is available but not maintained. |
+| [XMLWriter](https://www.php.net/manual/en/book.xmlwriter.php)         | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [XSL](https://www.php.net/manual/en/book.xsl.php)                     | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [Yac](https://www.php.net/manual/en/book.yac.php)                     | :x:                | :heavy_check_mark: | :four:<br/>[yac-2.3.1](https://pecl.php.net/package/yac)                                                            |
+| [Yaconf](https://www.php.net/manual/en/book.yaconf.php)               | :x:                | :heavy_check_mark: | :four:<br/>[yaconf-1.1.2](https://pecl.php.net/package/yaconf)                                                      |
+| [Yaf](https://www.php.net/manual/en/book.yaf.php)                     | :x:                | :heavy_check_mark: | :four:<br/>[yaf-3.3.5](https://pecl.php.net/package/yaf)                                                            |
+| [Yaml](https://www.php.net/manual/en/book.yaml.php)                   | :x:                | :heavy_check_mark: | :four:<br/>[yaml-2.2.2](https://pecl.php.net/package/yaml)                                                          |
+| [Yar](https://www.php.net/manual/en/book.yar.php)                     | :x:                | :heavy_check_mark: | :four:<br/>[yar-2.3.2](https://pecl.php.net/package/yar)                                                            |
+| [YAZ](https://www.php.net/manual/en/book.yaz.php)                     | :x:                | :heavy_check_mark: | :four:<br/>[yaz-1.2.4](https://pecl.php.net/package/yaz)                                                            |
+| [Zip](https://www.php.net/manual/en/book.zip.php)                     | :x:                | :heavy_check_mark: | :three:                                                                                                             |
+| [Zlib](https://www.php.net/manual/en/book.zlib.php)                   | :heavy_check_mark: | :heavy_check_mark: | :two:                                                                                                               |
+| [0MQ messaging](https://www.php.net/manual/en/book.zmq.php)           | :x:                | :x:                | :four:<br/>[zmq](https://pecl.php.net/package/zmq)<br/>Doesn't work with PHP 8.1.                                   |
+| [ZooKeeper](https://www.php.net/manual/en/book.zookeeper.php)         | :x:                | :x:                | :four:<br/>[zookeeper](https://pecl.php.net/package/zookeeper)<br/>Doesn't work with PHP 8.1.                       |
 
