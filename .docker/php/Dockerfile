@@ -2,6 +2,12 @@ FROM php:8.1-fpm
 
 RUN apt-get update
 
+# This library required by xdiff extension.
+WORKDIR /usr/src
+COPY libs/libxdiff-0.23.tar.gz ./libxdiff-0.23.tar.gz
+RUN tar -xzf libxdiff-0.23.tar.gz && cd libxdiff-0.23 && ./configure && make && make install
+WORKDIR /
+
 RUN echo "Installing PHP extensions...\n" \
     \
 #    && docker-php-ext-install bcmath \
@@ -60,6 +66,33 @@ RUN echo "Installing PHP extensions...\n" \
 #    && pecl install inotify-3.0.0 && docker-php-ext-enable inotify \
 #    && pecl install igbinary-3.2.7 && docker-php-ext-enable igbinary \
 #    && pecl install parle-0.8.3 && docker-php-ext-enable parle \
+#    && pecl install xhprof-2.3.7 && docker-php-ext-enable xhprof \
+    # !Important! xdiff extension requires a libxdiff library.
+#    && pecl install xdiff-2.1.1 && docker-php-ext-enable xdiff \
+#    && pecl install xattr-1.4.0 && docker-php-ext-enable xattr \
+#    && apt-get install libvarnishapi-dev -y && pecl install varnish-1.2.6 && docker-php-ext-enable varnish \
+#    && pecl install var_representation-0.1.2 && docker-php-ext-enable var_representation \
+#    && pecl install uopz-7.1.1 && docker-php-ext-enable uopz \
+#    && pecl install trader-0.5.1 && docker-php-ext-enable trader \
+#    && apt-get install libssh2-1-dev -y && pecl install ssh2-1.3.1 && docker-php-ext-enable ssh2 \
+#    && apt-get install libcurl4-openssl-dev -y && apt-get install libxml2-dev -y && pecl install solr-2.5.1 && docker-php-ext-enable solr \
+#    && pecl install seaslog-2.2.0 && docker-php-ext-enable seaslog \
+#    && pecl install scoutapm-1.8.2 && docker-php-ext-enable scoutapm \
+#    && pecl install runkit7-4.0.0a6 && docker-php-ext-enable runkit7 \
+#    && apt-get install librpm-dev -y && pecl install rpminfo-0.6.0 && docker-php-ext-enable rpminfo \
+#    && apt-get install librrd-dev -y && pecl install rrd-2.0.3 && docker-php-ext-enable rrd \
+#    && pecl install quickhash-1.1.1 && docker-php-ext-enable quickhash \
+    # !Important! PS extension requires a GD extension.
+#    && apt-get install pslib-dev -y && pecl install ps-1.4.4 && docker-php-ext-enable ps \
+#    && apt-get install libpcre3-dev -y && pecl install oauth-2.0.7 && docker-php-ext-enable oauth \
+#    && apt-get install libboost-dev protobuf-compiler -y && pecl install mysql_xdevapi-8.0.30 && docker-php-ext-enable mysql_xdevapi \
+#    && apt-get install libmemcached-dev zlib1g-dev -y && pecl install memcached-3.2.0 && docker-php-ext-enable memcached \
+#    && apt-get install zlib1g-dev -y && pecl install memcache-8.0 && docker-php-ext-enable memcache \
+#    && apt-get install libmcrypt-dev -y && pecl install mcrypt-1.0.5 && docker-php-ext-enable mcrypt \
+#    && pecl install mailparse-3.1.4 && docker-php-ext-enable mailparse \
+#    && pecl install lzf-1.7.0 && docker-php-ext-enable lzf \
+#    && apt-get install liblua5.1-0-dev -y && pecl install luasandbox-4.1.0 && docker-php-ext-enable luasandbox \
+    && pecl install redis-5.3.7 && docker-php-ext-enable redis \
     \
     && echo "\nThe extensions are successfully installed."
 
