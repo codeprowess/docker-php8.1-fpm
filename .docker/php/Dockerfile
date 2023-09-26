@@ -92,7 +92,14 @@ RUN echo "Installing PHP extensions...\n" \
 #    && pecl install mailparse-3.1.4 && docker-php-ext-enable mailparse \
 #    && pecl install lzf-1.7.0 && docker-php-ext-enable lzf \
 #    && apt-get install liblua5.1-0-dev -y && pecl install luasandbox-4.1.0 && docker-php-ext-enable luasandbox \
-    && pecl install redis-5.3.7 && docker-php-ext-enable redis \
+#    && pecl install redis-5.3.7 && docker-php-ext-enable redis \
+#    && apt-get install unixodbc-dev -y && pecl install sqlsrv-5.10.1 && docker-php-ext-enable sqlsrv \
+#    && apt-get install unixodbc-dev -y && pecl install pdo_sqlsrv-5.10.1 && docker-php-ext-enable pdo_sqlsrv \
+#    && apt-get install libkrb5-dev -y && pecl install krb5-1.1.4 && docker-php-ext-enable krb5 \
+#    && apt-get install libpam-dev -y && pecl install pam-2.2.4 && docker-php-ext-enable pam \
+#    && pecl install timezonedb-2022.5 && docker-php-ext-enable timezonedb \
+#    && pecl install openswoole-4.12.0 && docker-php-ext-enable openswoole \
+#    && apt-get install librdkafka-dev -y && pecl install simple_kafka_client-0.1.4 && docker-php-ext-enable simple_kafka_client \
     \
     && echo "\nThe extensions are successfully installed."
 
